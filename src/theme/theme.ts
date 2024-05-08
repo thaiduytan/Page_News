@@ -17,8 +17,8 @@ export const theme = createTheme({
       "#111827",
     ],
     gray: [
-      "#FFFFFF",
-      "#F2F2F2",
+      "#B7B7B7",
+      "#3A3A3A",
       "#E5E5E5",
       "#D9D9D9",
       "#CCCCCC",

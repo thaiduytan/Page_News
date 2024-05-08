@@ -1,8 +1,8 @@
-import { Inter, Open_Sans } from "next/font/google";
+import {Open_Sans, Montserrat } from "next/font/google";
 
 
-export const inter = Inter({
-  weight: "700",
+export const montserrat = Montserrat({
+  weight: ["400","600"],
   subsets: ["latin"],
   display: "swap",
 });
