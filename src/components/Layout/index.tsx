@@ -1,8 +1,6 @@
 "use client";
 
-import {
-  AppShell,
-} from "@mantine/core";
+import { AppShell } from "@mantine/core";
 import { useClickOutside, useDisclosure } from "@mantine/hooks";
 import type { PropsWithChildren } from "react";
 import Navbar from "../Navbar";
@@ -19,13 +17,13 @@ export const HomeLayout: React.FC<PropsWithChildren> = ({ children }) => {
         collapsed: { mobile: !opened },
       }}
       padding="md"
-      bg="#ccc"
+      bg={"var(--mantine-color-black)"}
     >
       <AppShell.Navbar p="lg" bg={"var(--mantine-color-black)"}>
         <Navbar />
       </AppShell.Navbar>
 
-      <AppShell.Main>qwe</AppShell.Main>
+      <AppShell.Main>{children}</AppShell.Main>
     </AppShell>
   );
 };
