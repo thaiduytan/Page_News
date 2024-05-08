@@ -1,11 +1,11 @@
 import { HomeLayout } from "@/components/Layout";
 import MainNews from "@/components/MainNews";
-import Search from "@/components/Search";
+import { sendRequestJS } from "@/utils/api";
 
 export default function Home() {
   return (
     <HomeLayout>
-      <MainNews/>
+      <MainNews />
     </HomeLayout>
   );
 }

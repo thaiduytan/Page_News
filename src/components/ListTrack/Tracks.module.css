@@ -1,0 +1,5 @@
+.trackItem {
+  background-color: var(--mantine-color-black);
+  border: rem(2px) solid #b8b8b8;
+  transition: all .25s linear;
+}

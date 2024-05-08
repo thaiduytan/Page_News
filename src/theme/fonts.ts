@@ -1,14 +1,19 @@
-import {Open_Sans, Montserrat } from "next/font/google";
-
+import { Montserrat, Inter, Allerta } from "next/font/google";
 
 export const montserrat = Montserrat({
-  weight: ["400","600"],
+  weight: ["400", "600"],
   subsets: ["latin"],
   display: "swap",
 });
 
-export const openSans = Open_Sans({
-  weight: ["400","700"],
+export const inter = Inter({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const allerta = Allerta({
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
