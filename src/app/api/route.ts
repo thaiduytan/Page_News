@@ -94,6 +94,6 @@ const listTracks: {
   statusCode: 200,
 };
 
-export async function GET(_request: Request, _response: Response) {
+export async function POST(_request: Request, _response: Response) {
   return Response.json(listTracks);
 }
