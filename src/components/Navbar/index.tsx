@@ -16,10 +16,18 @@ import Search from "@/components/Search";
 import { IconCategory } from "@tabler/icons-react";
 import { montserrat } from "@/theme/fonts";
 import Navigation from "../Navigation";
+import classes from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <Flex pos="relative" w="100%" h="100%" direction="column">
+    <Flex
+      pos="relative"
+      w="100%"
+      h="100%"
+      p="lg"
+      direction="column"
+      className={classes.navbar}
+    >
       <UnstyledButton className="logo" component={Link} href="/" mx={"auto"}>
         <Image
           src={"/assets/images/logo.png"}
@@ -34,7 +42,7 @@ const Navbar = () => {
 
       <AppShell.Section grow component={ScrollArea} type="scroll">
         <Group gap={15} mb={35}>
-          <IconCategory size={"1rem"} color="#fff"/>
+          <IconCategory size={"1rem"} color="#fff" />
           <Text
             className={montserrat.className}
             fz={20}
@@ -46,7 +54,7 @@ const Navbar = () => {
             All News
           </Text>
         </Group>
-        <Navigation/>
+        <Navigation />
       </AppShell.Section>
     </Flex>
   );
