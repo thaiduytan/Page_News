@@ -1,6 +1,6 @@
 import { Box, Grid, GridCol, Group, Text } from "@mantine/core";
 import React from "react";
-import Authentication from "@/components/MainNews/Authentication";
+import Authentication from "@/components/Authentication";
 import TrackPlayer from "@/components/TrackPlayer";
 import ListTrack from "@/components/ListTrack";
 import { sendRequestJS } from "@/utils/api";
