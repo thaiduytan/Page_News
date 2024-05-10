@@ -1,21 +1,28 @@
+import React from "react";
 import {
   AppShell,
   Box,
+  Divider,
   Flex,
   Group,
   Image,
   NavLink,
   rem,
   ScrollArea,
+  Stack,
   Text,
+  Title,
   UnstyledButton,
 } from "@mantine/core";
-import Link from "next/link";
-import React from "react";
+import Navigation from "@/components/Navigation";
 import Search from "@/components/Search";
-import { IconCategory } from "@tabler/icons-react";
+import { Avatar } from "@/components/Avatar";
+
+import Link from "next/link";
+
+import { IconCategory, IconLogout } from "@tabler/icons-react";
 import { montserrat } from "@/theme/fonts";
-import Navigation from "../Navigation";
+
 import classes from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -28,7 +35,13 @@ const Navbar = () => {
       direction="column"
       className={classes.navbar}
     >
-      <UnstyledButton className="logo" component={Link} href="/" mx={"auto"}>
+      <UnstyledButton
+        className="logo"
+        component={Link}
+        href="/"
+        mx={"auto"}
+        visibleFrom="sm"
+      >
         <Image
           src={"/assets/images/logo.png"}
           alt="logo"
@@ -36,11 +49,22 @@ const Navbar = () => {
           h={rem(40)}
         />
       </UnstyledButton>
-      <Box mt={60} mb={40}>
-        <Search />
-      </Box>
-
       <AppShell.Section grow component={ScrollArea} type="scroll">
+        <Stack px={10} hiddenFrom="sm">
+          <Avatar size={"lg"} src={"/assets/images/avatar.png"} />
+          <Title className={montserrat.className} c={"#fff"} order={4}>
+            Shane Van Boeing
+          </Title>
+        </Stack>
+        <Box
+          mt={{
+            base: 30,
+            sm: 60,
+          }}
+          mb={40}
+        >
+          <Search />
+        </Box>
         <Group gap={15} mb={35}>
           <IconCategory size={"1rem"} color="#fff" />
           <Text
@@ -55,6 +79,16 @@ const Navbar = () => {
           </Text>
         </Group>
         <Navigation />
+        <Divider size={0.5} my={15} />
+        <NavLink
+          href="#required-for-focus"
+          label="Logout"
+          color="white"
+          className={montserrat.className}
+          leftSection={<IconLogout size="1rem" stroke={1.5} />}
+          active
+          variant="subtle"
+        />
       </AppShell.Section>
     </Flex>
   );

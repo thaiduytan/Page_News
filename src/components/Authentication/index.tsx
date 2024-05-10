@@ -1,7 +1,7 @@
 "use client";
 import { Box, Flex, Group, Menu, rem, Text } from "@mantine/core";
 import React from "react";
-import Notification from "@/components/MainNews/Authentication/Notification";
+import Notification from "@/components/Authentication/Notification";
 import { Avatar } from "@/components/Avatar";
 import { IconLogout } from "@tabler/icons-react";
 import { inter } from "@/theme/fonts";
