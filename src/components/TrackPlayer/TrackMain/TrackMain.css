@@ -1,0 +1,46 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap"); */
+
+.rhap_container {
+  background-color: transparent;
+}
+.rhap_container .rhap_controls-section {
+  justify-content: center;
+}
+.rhap_container .rhap_controls-section .rhap_main-controls {
+  svg {
+    color: #ffff;
+  }
+}
+.rhap_container .rhap_controls-section .rhap_additional-controls {
+  margin-right: rem(10px);
+  flex: 0;
+  svg {
+    color: #ffff;
+  }
+}
+
+.rhap_container .rhap_progress-section .rhap_total-time,
+.rhap_container .rhap_progress-section .rhap_current-time {
+  font-family: "Allerta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffff;
+}
+.rhap_progress-section .rhap_progress-bar {
+  height: rem(4px);
+}
+.rhap_progress-section .rhap_progress-bar .rhap_progress-indicator {
+  height: rem(10px);
+  width: rem(10px);
+  top: rem(-3px);
+  background-color: var(--mantine-color-track-0);
+}
+.rhap_progress-section .rhap_progress-bar .rhap_progress-filled {
+  background-color: var(--mantine-color-track-0);
+}
+.rhap_progress-section .rhap_progress-bar .rhap_progress-filled {
+  background-color: var(--mantine-color-track-0);
+}
+.rhap_progress-section .rhap_progress-bar .rhap_download-progress {
+  background-color: var(--mantine-color-track-1);
+}

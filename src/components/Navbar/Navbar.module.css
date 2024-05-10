@@ -1,0 +1,9 @@
+.navbar {
+  border-right: 1px solid #2b2b2b;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(20, 20, 20, 0.2) 131.73%
+  );
+  backdrop-filter: blur(150px);
+}

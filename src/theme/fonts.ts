@@ -1,4 +1,4 @@
-import { Montserrat, Inter, Allerta } from "next/font/google";
+import { Montserrat, Inter, Allerta, Poppins } from "next/font/google";
 
 export const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -14,6 +14,12 @@ export const inter = Inter({
 
 export const allerta = Allerta({
   weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const poppins = Poppins({
+  weight: "500",
   subsets: ["latin"],
   display: "swap",
 });
