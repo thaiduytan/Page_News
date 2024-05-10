@@ -9,7 +9,7 @@ import classes from "./Layout.module.css";
 export const HomeLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const smailDevice = useMediaQuery(`(max-width: ${em(750)})`);
   const [opened, { toggle, close }] = useDisclosure();
-  const ref = useClickOutside(() => close());
+  // const ref = useClickOutside(() => close());
   return (
     <AppShell
       header={{ height: 60, collapsed: smailDevice ? false : true }}

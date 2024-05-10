@@ -174,9 +174,12 @@ const MainNews = async () => {
         base: 5,
         md: 12,
       }}
-      px={50}
+      px={{
+        base: 10,
+        sm: 50,
+      }}
     >
-      <GridCol span={12}>
+      <GridCol span={12} visibleFrom="sm">
         <Authentication />
       </GridCol>
       <GridCol span={12}>

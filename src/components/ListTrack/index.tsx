@@ -5,11 +5,12 @@ import { Grid } from "@mantine/core";
 const ListTrack = ({ data }: { data: ITrackTop[] | undefined }) => {
   return (
     <Grid
-      gutter={{ base: 5, md: 25 }}
+      gutter={{ base: 30, md: 25 }}
       style={{
         // mixBlendMode: "lighten",
         overflow: "hidden",
       }}
+      justify="center"
     >
       {data &&
         data?.map((item, i) => (
