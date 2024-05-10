@@ -79,8 +79,9 @@ const Navbar = () => {
           </Text>
         </Group>
         <Navigation />
-        <Divider size={0.5} my={15} />
+        <Divider size={0.5} my={15} hiddenFrom="sm" />
         <NavLink
+          hiddenFrom="sm"
           href="#required-for-focus"
           label="Logout"
           color="white"

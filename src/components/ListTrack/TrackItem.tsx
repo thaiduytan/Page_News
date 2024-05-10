@@ -39,7 +39,8 @@ const TrackItem: React.FC<ITrackTop> = (props) => {
   return (
     <GridCol
       span={{
-        base: 3,
+        base: 10,
+        sm: 3
       }}
     >
       <Card padding="xs" radius="lg" className={classes.trackItem}>

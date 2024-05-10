@@ -7,7 +7,10 @@ const TrackPlayer = () => {
   return (
     <Grid
       gutter={{ base: 5, md: 10 }}
-      mt={40}
+      mt={{
+        base: 20,
+        sm: 40,
+      }}
       mb={20}
       px={12}
       py={10}
@@ -20,14 +23,16 @@ const TrackPlayer = () => {
     >
       <GridCol
         span={{
-          base: 4,
+          base: 12,
+          sm: 4,
         }}
       >
         <TrackInfo />
       </GridCol>
       <GridCol
         span={{
-          base: 6,
+          base: 12,
+          sm: 6,
         }}
       >
         <TrackMain />
