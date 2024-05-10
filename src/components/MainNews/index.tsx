@@ -6,107 +6,168 @@ import ListTrack from "@/components/ListTrack";
 import { sendRequestJS } from "@/utils/api";
 import Pagination from "@/components/Pagination";
 
-const MainNews = async () => {
-  const tracks = await sendRequestJS<IBackendRes<ITrackTop[]>>({
-    url: `${process.env.NEXT_PUBLIC_URL}/api`,
-    method: "POST",
-  });
-  // const tracks: {
-  //   data: ITrackTop[];
-  //   error?: string | string[];
-  //   message: string;
-  //   statusCode: number | string;
-  // } = {
-  //   data: [
-  //     {
-  //       _id: "1",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-1.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "2",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-2.png",
-  //       duration: 340,
-  //     },
-  //     {
-  //       _id: "3",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-3.png",
-  //       duration: 300,
-  //     },
-  //     {
-  //       _id: "4",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-4.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "5",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-5.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "6",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-6.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "7",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-7.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "8",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-8.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "9",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-9.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "10",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-10.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "11",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-11.png",
-  //       duration: 342,
-  //     },
-  //     {
-  //       _id: "12",
-  //       title: "Dorem ipsum dolor sit amet",
-  //       description: "Thanks for everyone viewing and downloading.",
-  //       imgUrl: "/assets/tracks/track-12.png",
-  //       duration: 342,
-  //     },
-  //   ],
-  //   message: "Fetch tracks successfully",
-  //   statusCode: 200,
-  // };
+export const tracks: {
+  data: ITrackTop[];
+  error?: string | string[];
+  message: string;
+  statusCode: number | string;
+} = {
+  data: [
+    {
+      _id: "1",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-1.png",
+      trackUrl: "/assets/audio/ayden.mp3",
+      duration: 342,
+      uploader: {
+        _id: "11",
+        name: "J.K. Rowling",
+      },
+    },
+    {
+      _id: "2",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-2.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 340,
+      uploader: {
+        _id: "22",
+        name: "Jimmy Phong",
+      },
+    },
+    {
+      _id: "3",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-3.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 300,
+      uploader: {
+        _id: "33",
+        name: "Alex Nguyen",
+      },
+    },
+    {
+      _id: "4",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-4.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 250,
+      uploader: {
+        _id: "44",
+        name: "Alex Nguyen",
+      },
+    },
+    {
+      _id: "5",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-5.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 342,
+      uploader: {
+        _id: "55",
+        name: "Tony Thai",
+      },
+    },
+    {
+      _id: "6",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-6.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 342,
+      uploader: {
+        _id: "66",
+        name: "Tony Thai",
+      },
+    },
+    {
+      _id: "7",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-7.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 342,
+      uploader: {
+        _id: "77",
+        name: "Tony Thai",
+      },
+    },
+    {
+      _id: "8",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-8.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 342,
+      uploader: {
+        _id: "88",
+        name: "Tony Thai",
+      },
+    },
+    {
+      _id: "9",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-9.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 342,
+      uploader: {
+        _id: "99",
+        name: "Tony Thai",
+      },
+    },
+    {
+      _id: "10",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-10.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 342,
+      uploader: {
+        _id: "1010",
+        name: "Tony Thai",
+      },
+    },
+    {
+      _id: "11",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-11.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 342,
+      uploader: {
+        _id: "1111",
+        name: "Tony Thai",
+      },
+    },
+    {
+      _id: "12",
+      title: "Dorem ipsum dolor sit amet",
+      description: "Thanks for everyone viewing and downloading.",
+      imgUrl: "/assets/tracks/track-12.png",
+      trackUrl: "/assets/audio/ay.mp3",
+      duration: 342,
+      uploader: {
+        _id: "1212",
+        name: "Tony Thai",
+      },
+    },
+  ],
+  message: "Fetch tracks successfully",
+  statusCode: 200,
+};
 
+const MainNews = async () => {
+  // failled to deploy vercel
+  // const tracks = await sendRequestJS<IBackendRes<ITrackTop[]>>({
+  //   url: `${process.env.NEXT_PUBLIC_URL}/api`,
+  //   method: "POST",
+  // });
   return (
     <Grid
       gutter={{

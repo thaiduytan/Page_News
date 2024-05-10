@@ -19,10 +19,23 @@ import React from "react";
 import classes from "./Tracks.module.css";
 import { useHover } from "@mantine/hooks";
 import { convertSecondsToTime } from "@/helpers/common";
+import { TrackContext } from "@/context/TrackWrapper";
 
 const TrackItem: React.FC<ITrackTop> = (props) => {
+  const { currentTrack, setCurrentTrack } = React.useContext(
+    TrackContext
+  ) as ITrackContext;
   const { hovered, ref } = useHover();
   const { title, description, imgUrl, duration } = props;
+
+  const handleClickChangeTrack = (props: ITrackTop) => {
+    if (props?._id !== currentTrack?._id) {
+      setCurrentTrack({
+        ...props,
+        isPlaying: true,
+      });
+    }
+  };
   return (
     <GridCol
       span={{
@@ -38,10 +51,17 @@ const TrackItem: React.FC<ITrackTop> = (props) => {
             cursor: "pointer",
           }}
         >
-          <Image src={imgUrl} w={"100%"} alt={title} />
-          {hovered && (
+          <Image src={imgUrl} w={"100%"} alt={title} fit="cover" />
+          {hovered ||
+          (props?._id === currentTrack?._id &&
+            currentTrack?.isPlaying === true) ? (
             <>
-              <Overlay inset={"0"} color="#000" backgroundOpacity={0.4} />{" "}
+              <Overlay
+                inset={"0"}
+                color="#000"
+                backgroundOpacity={0.4}
+                onClick={() => handleClickChangeTrack(props)}
+              />
               <Image
                 style={{
                   position: "absolute",
@@ -55,7 +75,7 @@ const TrackItem: React.FC<ITrackTop> = (props) => {
                 alt={title}
               />
             </>
-          )}
+          ) : null}
         </Box>
         <Flex direction={"column"} gap={10} px={10} py={10}>
           <Title

@@ -1,3 +1,4 @@
+import { Providers } from "@/providers";
 import { ThemeProvider } from "@/theme/ThemeProvider";
 import { ColorSchemeScript } from "@mantine/core";
 import type { Metadata } from "next";
@@ -18,7 +19,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -17,11 +17,11 @@ export const theme = createTheme({
       "#111827",
     ],
     gray: [
-      "#B7B7B7",//0
-      "#3A3A3A",//1
-      "#E5E5E5",//2
+      "#B7B7B7", //0
+      "#3A3A3A", //1
+      "#E5E5E5", //2
       "#EFEFEF", //3
-      "#B8B8B8",//4
+      "#B8B8B8", //4
       "#BFBFBF",
       "#B3B3B3",
       "#A6A6A6",
@@ -38,6 +38,18 @@ export const theme = createTheme({
       "#1A1A1A",
       "#0D0D0D",
       "#000000",
+    ],
+    track: [
+      "#5EFCE8", //0
+      "#DDD7FC", // 1
+      "#bdc2de",
+      "#98a0ca",
+      "#7a84ba",
+      "#6672b0",
+      "#5c68ac",
+      "#4c5897",
+      "#424e88",
+      "#364379",
     ],
   },
 });
