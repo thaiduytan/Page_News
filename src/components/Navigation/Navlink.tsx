@@ -32,7 +32,10 @@ const Navlink: React.FC<INavigationItem> = ({
           href={"#"}
           label={item?.title}
           pl={10}
-          my={15}
+          my={{
+            base: 5,
+            sm: 15
+          }}
           className={montserrat.className}
           classNames={{
             root: classes.navlinkChild,

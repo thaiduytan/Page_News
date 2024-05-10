@@ -40,7 +40,7 @@ const TrackItem: React.FC<ITrackTop> = (props) => {
     <GridCol
       span={{
         base: 10,
-        sm: 3
+        sm: 3,
       }}
     >
       <Card padding="xs" radius="lg" className={classes.trackItem}>
@@ -58,6 +58,7 @@ const TrackItem: React.FC<ITrackTop> = (props) => {
             currentTrack?.isPlaying === true) ? (
             <>
               <Overlay
+                zIndex={10}
                 inset={"0"}
                 color="#000"
                 backgroundOpacity={0.4}
