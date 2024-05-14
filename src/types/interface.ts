@@ -23,7 +23,6 @@ declare global {
     createdAt?: string;
     updatedAt?: string;
   }
-
   interface IRequest {
     url: string;
     method?: string;
@@ -34,12 +33,19 @@ declare global {
     nextOption?: any;
   }
 
-  interface IBackendRes<T> {
-    error?: string | string[];
-    message: string;
-    statusCode: number | string;
-    data?: T;
-  }
+  // interface IBackendRes<T> {
+  //   error?: string | string[];
+  //   message: string;
+  //   statusCode: number | string;
+  //   data?: T;
+  // }
+
+  // interface IBackendRes<T> {
+  //   error?: string | string[];
+  //   message: string;
+  //   statusCode: number | string;
+  //   data?: T;
+  // }
 
   interface IModelPaginate<T> {
     meta: {
@@ -57,5 +63,38 @@ declare global {
   interface ITrackContext {
     currentTrack: IPlayTrack;
     setCurrentTrack: (v: IPlayTrack) => void;
+  }
+
+  // new
+  interface IBackendRes<T> {
+    error?: string | string[];
+    data?: T;
+  }
+
+  interface INewHeadline {
+    id: string;
+    source: string;
+    timestamp: number;
+    text: string;
+  }
+
+  interface IMinorType {
+    type: string;
+    name: string;
+    auth_code: string;
+    icon_id: number;
+    fixed_page: boolean;
+  }
+  interface IMajorType {
+    type: string;
+    name: string;
+    auth_code: string;
+    icon_id: 10;
+    minor_type: IMinorType[];
+  }
+
+  interface ICategorys {
+    name: string;
+    major_type: IMajorType[];
   }
 }
