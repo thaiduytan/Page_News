@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   AppShell,
@@ -24,8 +25,19 @@ import { IconCategory, IconLogout } from "@tabler/icons-react";
 import { montserrat } from "@/theme/fonts";
 
 import classes from "./Navbar.module.css";
+import { fetchDataCategorys } from "@/app/actions";
 
 const Navbar = () => {
+  const [categorys, setCategorys] = React.useState<ICategorys | null>(null);
+  const getDataCategorys = async () => {
+    const res = await fetchDataCategorys();
+    if (res.data && res.data.DynamicNewsConf) {
+      setCategorys(res.data.DynamicNewsConf.category);
+    }
+  };
+  React.useEffect(() => {
+    getDataCategorys();
+  }, []);
   return (
     <Flex
       pos="relative"
@@ -78,7 +90,7 @@ const Navbar = () => {
             All News
           </Text>
         </Group>
-        <Navigation />
+        <Navigation data={categorys} />
         <Divider size={0.5} my={15} hiddenFrom="sm" />
         <NavLink
           hiddenFrom="sm"

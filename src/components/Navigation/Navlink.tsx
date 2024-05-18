@@ -1,20 +1,19 @@
 import React from "react";
-import { INavigationItem } from ".";
 import { NavLink } from "@mantine/core";
 import Link from "next/link";
 import classes from "./Navlink.module.css";
 import { montserrat } from "@/theme/fonts";
 
-const Navlink: React.FC<INavigationItem> = ({
-  title,
-  href,
-  subItems,
-  Icon,
-  i,
-}) => {
-  return subItems ? (
+export type NavLinkType = {
+  category: IMajorType;
+  i: number;
+};
+
+const Navlink: React.FC<NavLinkType> = ({ category, i }) => {
+  const { minor_type, name } = category;
+  return minor_type ? (
     <NavLink
-      label={title}
+      label={name}
       disableRightSectionRotation={false}
       childrenOffset={28}
       defaultOpened={i === 0}
@@ -25,16 +24,16 @@ const Navlink: React.FC<INavigationItem> = ({
         root: classes.navlinkParent,
       }}
     >
-      {subItems.map((item, i) => (
+      {minor_type.map((item: IMinorType, j: number) => (
         <NavLink
-          key={`${item?.title}-${i + 1}`}
+          key={`${item?.name}-${j + 1}`}
           component={Link}
           href={"#"}
-          label={item?.title}
+          label={item?.name}
           pl={10}
           my={{
             base: 5,
-            sm: 15
+            sm: 15,
           }}
           className={montserrat.className}
           classNames={{
@@ -47,9 +46,13 @@ const Navlink: React.FC<INavigationItem> = ({
     <NavLink
       component={Link}
       href={"#"}
-      label={title}
-      //   leftSection={Icon && <Icon size={18} stroke={1.5} />}
-      pl={0}
+      label={name}
+      pl={10}
+      pr={0}
+      className={montserrat.className}
+      classNames={{
+        root: classes.navlinkParent,
+      }}
     />
   );
 };
